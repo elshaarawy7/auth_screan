@@ -1,8 +1,6 @@
-import 'package:auth_screan/features/auth/presentation/screens/login_page.dart';
 import 'package:flutter/material.dart';
 
-import 'core/theme/app_theme.dart';
-import 'features/auth/presentation/screens/screens/home_screen.dart';
+import 'splash_screen.dart';
 
 void main() {
   runApp(const AuthApp());
@@ -14,10 +12,13 @@ class AuthApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Auth',
+      title: 'AuthScreen',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.light,
-      home: LoginPage()
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF6366F1)),
+        useMaterial3: true,
+      ),
+      home: const SplashScreen(),
     );
   }
 }
